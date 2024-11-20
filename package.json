@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "jest",
     "build": "webpack --progress --color",
     "build:watch": "npm run build -- -w",
     "start": "npm run build && web-ext run -s extension/"
@@ -17,6 +18,7 @@
     "@babel/preset-react": "^7.25.9",
     "babel-loader": "^9.2.1",
     "idb-file-storage": "^0.1.0",
+    "jest": "^29.7.0",
     "react": "15.5.4",
     "react-dom": "15.5.4",
     "uuid": "^3.0.1",
