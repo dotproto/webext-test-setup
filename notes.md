@@ -36,3 +36,29 @@
     ```
 
     It didn't work, but only because we haven't created any tests. Let's do that now.
+
+5. Create a new file at `src/utils/image-store.test.js`
+
+    ```js
+    import { loadStoredImages } from "./image-store.js";
+
+    test('should be a function', () => {
+      expect(typeof loadStoredImages).toBe("function");
+    });
+    ```
+
+    ```bash
+    $ npm run test
+
+    > store-collected-images@1.0.0 test
+    > jest
+
+    PASS  src/utils/image-store.test.js
+    ✓ should be a function (1 ms)
+
+    Test Suites: 1 passed, 1 total
+    Tests:       1 passed, 1 total
+    Snapshots:   0 total
+    Time:        0.335 s, estimated 1 s
+    Ran all test suites.
+    ```
