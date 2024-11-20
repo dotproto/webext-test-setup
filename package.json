@@ -4,35 +4,33 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --display-error-details --progress --colors",
+    "build": "webpack --progress --color",
     "build:watch": "npm run build -- -w",
     "start": "npm run build && web-ext run -s extension/"
   },
   "author": "",
   "license": "MPL-2.0",
   "devDependencies": {
-    "babel-core": "6.24.1",
-    "babel-loader": "7.0.0",
-    "babel-plugin-transform-class-properties": "6.24.1",
-    "babel-plugin-transform-es2015-modules-commonjs": "6.24.1",
-    "babel-plugin-transform-object-rest-spread": "6.23.0",
-    "babel-preset-es2017": "6.24.1",
-    "babel-preset-react": "6.24.1",
+    "@babel/core": "^7.26.0",
+    "@babel/plugin-transform-class-properties": "^7.25.9",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
+    "babel-loader": "^9.2.1",
     "idb-file-storage": "^0.1.0",
     "react": "15.5.4",
     "react-dom": "15.5.4",
     "uuid": "^3.0.1",
     "web-ext": "^8.3.0",
-    "webpack": "2.6.1"
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4"
   },
   "babel": {
     "presets": [
-      "es2017",
-      "react"
+      "@babel/preset-env",
+      "@babel/preset-react"
     ],
     "plugins": [
-      "transform-class-properties",
-      "transform-es2015-modules-commonjs"
+      "@babel/plugin-transform-class-properties"
     ]
   }
 }
