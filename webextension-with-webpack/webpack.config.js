@@ -20,15 +20,19 @@ module.exports = {
   },
   module: {
     rules: [{
-      exclude: ['/node_modules/', '!/node_modules/idb-file-storage'],
-      test: /\.js$/,
-      use: [
+      exclude: /node_modules\/(?!(idb-file-storage))/,
+      test: /\.(?:js|mjs|cjs)$/,
+      use: [{
         // This transpiles all code (except for third party modules) using Babel.
-        {
-          // Babel options are in .babelrc
-          loader: 'babel-loader',
-        },
-      ]
+        loader: 'babel-loader',
+        // Babel options are in .babelrc
+        options: {
+          targets: "defaults",
+          presets: [
+            ['@babel/preset-env']
+          ]
+        }
+      }],
     }]
   },
   resolve: {
@@ -48,5 +52,6 @@ module.exports = {
   ],
   // This will expose source map files so that errors will point to your
   // original source files instead of the transpiled files.
-  devtool: 'sourcemap',
+  devtool: 'source-map',
+  mode: "development"
 };
